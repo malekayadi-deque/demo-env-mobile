@@ -1,0 +1,30 @@
+# Normalize all text files to LF in the repository.
+* text=auto
+
+# Gradle wrapper: gradlew must stay LF (sh), gradlew.bat must be CRLF (cmd.exe).
+gradlew    text eol=lf
+*.bat      text eol=crlf
+*.cmd      text eol=crlf
+
+# Explicit text types
+*.kt       text
+*.kts      text
+*.java     text
+*.xml      text
+*.md       text
+*.js       text
+*.json     text
+*.pro      text
+*.properties text
+
+# Binary — never touch line endings or attempt diffs
+*.jar      binary
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.ico      binary
+*.ttf      binary
+*.webp     binary
+*.apk      binary
+*.aab      binary

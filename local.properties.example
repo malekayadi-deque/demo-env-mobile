@@ -1,0 +1,35 @@
+# ---------------------------------------------------------------------------
+# Copy this file to `local.properties` and fill in your own values.
+# `local.properties` is git-ignored and must NEVER be committed.
+#
+#   macOS/Linux:  cp local.properties.example local.properties
+#   Windows:      copy local.properties.example local.properties
+# ---------------------------------------------------------------------------
+
+# --- Android SDK location ---------------------------------------------------
+# Android Studio usually writes this for you on first sync.
+#
+# macOS:    sdk.dir=/Users/<you>/Library/Android/sdk
+# Linux:    sdk.dir=/home/<you>/Android/Sdk
+# Windows:  backslashes AND the drive colon must be escaped, e.g.
+#           sdk.dir=C\:\\Users\\<you>\\AppData\\Local\\Android\\Sdk
+#           (an unescaped Windows path fails silently — this is the #1 setup trap)
+sdk.dir=
+
+# --- Deque Artifactory (build time) -----------------------------------------
+# Used by settings.gradle.kts to resolve the axe-devtools-android AAR from
+# https://agora.dequecloud.com:443/artifactory/libs-release
+# Without these, Gradle sync fails: the axe AAR cannot be resolved.
+axe.username=your.email@example.com
+axe.password=your_artifactory_token
+
+# --- axe DevTools cloud (test runtime) --------------------------------------
+# Injected as BuildConfig.AXE_DEVTOOLS_APIKEY / AXE_DEVTOOLS_PROJECT_ID
+# (debug build type only) by app/build.gradle.kts.
+# Without these the build still succeeds, but axe.isUserAuthenticated() returns
+# false and every axe.scan() returns null:
+#   AssertionError: Scan returned null for <Screen>
+axe.apiKey=your-api-key-here
+axe.projectId=your-project-id-here
+
+# All four axe values come from https://axe.deque.com -> Account -> API Access

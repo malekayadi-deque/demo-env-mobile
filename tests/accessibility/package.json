@@ -1,0 +1,11 @@
+{
+  "name": "embel-axe-autoscan",
+  "version": "1.0.0",
+  "description": "Appium-based axe DevTools autoscan for Embel Android",
+  "scripts": {
+    "autoscan": "node autoscan.js"
+  },
+  "dependencies": {
+    "webdriverio": "^8.0.0"
+  }
+}
